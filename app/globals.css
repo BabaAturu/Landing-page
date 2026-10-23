@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.appnexus-page {
+  background: #fff;
+}
+
+.appnexus-page .app-nav {
+  position: relative;
+  z-index: 5;
+  box-shadow: 0 1px 0 rgb(15 23 42 / 5%);
+}
+
+.appnexus-page .app-nav .h-16 {
+  height: 48px;
+}
+
+.appnexus-page .app-hero {
+  height: auto;
+  min-height: 0;
+  padding: 22px 0 28px;
+  background: linear-gradient(112deg, #dff8ff 0%, #eff8ff 45%, #e8e4ff 100%);
+}
+
+.appnexus-page .app-hero > .absolute {
+  display: none;
+}
+
+.appnexus-page .app-hero-inner {
+  max-width: 1120px;
+}
+
+.appnexus-page .app-hero-inner > .grid {
+  gap: 0;
+}
+
+.appnexus-page .app-hero-copy {
+  text-align: left;
+}
+
+.appnexus-page .app-hero-copy h1 {
+  font-size: 38px;
+  line-height: 1.05;
+}
+
+.appnexus-page .app-hero-copy > p {
+  max-width: 390px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  color: #4d6178;
+}
+
+.appnexus-page .app-hero-copy > div:last-child {
+  border-color: rgb(255 255 255 / 65%);
+}
+
+.appnexus-page .app-hero-visual {
+  min-height: 260px;
+  margin-top: 10px;
+  align-items: flex-start;
+}
+
+.appnexus-page .app-hero-visual::before {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #65d5ef 0 48%, #8f8bfa 49% 100%);
+  content: '';
+  transform: translateX(-50%);
+}
+
+.appnexus-page .app-hero-visual > div:first-child {
+  display: none;
+}
+
+.appnexus-page .app-hero-device {
+  width: 190px;
+  padding: 8px;
+  transform: rotate(5deg) translateY(24px);
+}
+
+.appnexus-page #screenshots,
+.appnexus-page #features,
+.appnexus-page #install {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.appnexus-page #screenshots .text-center,
+.appnexus-page #features .text-center,
+.appnexus-page #install .text-center {
+  margin-bottom: 24px;
+}
+
+.appnexus-page #screenshots .text-center h2,
+.appnexus-page #features .text-center h2,
+.appnexus-page #install .text-center h2 {
+  font-size: 22px;
+}
+
+.appnexus-page #features {
+  background: #eff8fc;
+}
+
+.appnexus-page #features .grid > div {
+  padding: 10px 18px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.appnexus-page #install .grid > div {
+  min-height: 116px;
+  padding: 12px 8px;
+  border-radius: 8px;
+}
+
+.appnexus-page .app-footer {
+  padding-top: 24px;
+  padding-bottom: 18px;
+}
+
+@media (min-width: 640px) {
+  .appnexus-page .app-hero {
+    height: 286px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .appnexus-page .app-hero-inner,
+  .appnexus-page .app-hero-inner > .grid {
+    height: 100%;
+  }
+
+  .appnexus-page .app-hero-inner > .grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .appnexus-page .app-hero-copy,
+  .appnexus-page .app-hero-visual {
+    grid-column: auto;
+  }
+
+  .appnexus-page .app-hero-visual {
+    height: 100%;
+    min-height: 0;
+    margin-top: 0;
+  }
+
+  .appnexus-page .app-hero-visual::before {
+    top: 44px;
+    width: 235px;
+    height: 235px;
+  }
+
+  .appnexus-page .app-hero-device {
+    width: 190px;
+    transform: rotate(5deg) translateY(30px);
+  }
+
+  .appnexus-page #screenshots .grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .appnexus-page #features .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .appnexus-page #install .grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+  }
+}
+
+@media (max-width: 639px) {
+  .appnexus-page .app-hero-copy {
+    text-align: center;
+  }
+
+  .appnexus-page .app-hero-copy > div:first-child {
+    justify-content: center;
+  }
+
+  .appnexus-page .app-hero-copy > div:last-child {
+    justify-content: center;
+  }
+
+  .appnexus-page .app-hero-visual {
+    min-height: 310px;
+  }
+
+  .appnexus-page .app-hero-device {
+    width: 180px;
+    transform: rotate(4deg);
+  }
+
+  .appnexus-page #screenshots .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
